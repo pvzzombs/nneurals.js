@@ -1,4 +1,4 @@
-# nneurals.js
+# nneurals.js  [![DeepScan grade](https://deepscan.io/api/teams/5260/projects/8690/branches/109008/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5260&pid=8690&bid=109008)  
 A simple three layer neural network perceptron in javascript
   
   
