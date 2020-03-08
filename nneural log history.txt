@@ -1,0 +1,29 @@
+versions:
+1.0.0
+  * initial release
+  * nneurals.js
+  * features:
+    * ability to resize hidden layer
+    * ability to adjust layer sizes 
+    * ability to continue training without losing data
+    * ability to think?
+
+1.0.1
+  * added new methods:
+    * takeInput
+    * takeOutput
+    * feedForward
+
+1.0.2
+  * bias is now added to the activation (default = 1)
+  * errors are now multiplied by 2 to improve
+    * (output - training.output) * 2
+    * with 2:
+      * 0.012580022542443874
+      * 0.9897167008946515
+    * without 2:
+      * 0.01802922957184471
+      * 0.9852669387588914
+    * with bias=1
+      * 0.00918667900641817
+      * 0.990618057366465

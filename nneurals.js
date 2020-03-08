@@ -389,7 +389,7 @@ Matrix.prototype = {
     return this;
   }
 };
-
+/* version 1.0.1 */
 function m(a, b) {
   return (new Matrix(a, b));
 }
@@ -400,14 +400,24 @@ function nn(nI, nH, nO) {
   this.output2 = null;
   this.output = null;
 
+  this.bias = 1;
+
   this.error1 = null;
   this.errorD1 = null;
 
   this.error2 = null;
   this.errorD2 = null;
 
+  this.takeInput = function(arr){
+    this.input = m(arr);
+  };
+
+  this.takeOutput = function(arr){
+    this.output = m(arr);
+  };
+
   this.think1 = function () {
-    return this.input.dot(this.weight1).sigmoid();
+    return this.input.dot(this.weight1).fAdd(this.bias).sigmoid();
   };
 
   this.think2 = function () {
@@ -417,9 +427,16 @@ function nn(nI, nH, nO) {
   this.think = function (arr) {
     return arr.dot(this.weight1).sigmoid().dot(this.weight2).sigmoid();
   };
+
+  this.feedForward = function(arr){
+    var mt = m(arr);
+    return mt.dot(this.weight1).sigmoid().dot(this.weight2).sigmoid().value;
+  };
+
   this.sigmoidDerivative = function (arr) {
     return arr.lDot(arr.fSub(1));
   };
+
   this.train = function (iterations) {
     //initialize number of inputs
     nI = nI || this.input.width;
@@ -441,11 +458,11 @@ function nn(nI, nH, nO) {
 
       //calculate error for output weight2
 
-      this.error2 = this.output.subtract(this.output2);
+      this.error2 = this.output.subtract(this.output2).sMultiply(2);
       this.errorD2 = this.error2.lDot(this.sigmoidDerivative(this.output2));
 
       //calculate error 1
-      this.error1 = this.errorD2.dot(this.weight2.T());
+      this.error1 = this.errorD2.dot(this.weight2.T()).sMultiply(2);
       this.errorD1 = this.error1.lDot(this.sigmoidDerivative(this.output1));
 
       //adjustments
