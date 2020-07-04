@@ -389,7 +389,7 @@ Matrix.prototype = {
     return this;
   }
 };
-/* version 1.0.1 */
+/* version 1.0.2 */
 function m(a, b) {
   return (new Matrix(a, b));
 }
