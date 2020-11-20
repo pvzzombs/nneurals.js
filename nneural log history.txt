@@ -27,3 +27,5 @@ versions:
     * with bias=1
       * 0.00918667900641817
       * 0.990618057366465
+1.0.3
+  * placed all functions into closure
