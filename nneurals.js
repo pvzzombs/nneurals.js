@@ -480,11 +480,12 @@
     define([], nn);
     define([], m);
   } else if (typeof exports === 'object') {
-    module.exports = nn;
-    module.exports = m;
+    module.exports = {
+      nn: nn,
+      m: m
+    };
   } else {
     scope.nn = nn;
     scope.m = m;
   }
-})(this)
-
+})(this);

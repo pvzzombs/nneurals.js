@@ -29,3 +29,7 @@ versions:
       * 0.990618057366465
 1.0.3
   * placed all functions into closure
+
+1.0.4
+  * Added test suite and created a minified version
+  * Added package.json

@@ -1,0 +1,27 @@
+{
+  "name": "nneurals",
+  "version": "1.0.4",
+  "description": "A simple three layer neural network perceptron in javascript",
+  "main": "nneurals.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pvzzombs/nneurals.js.git"
+  },
+  "keywords": [
+    "neural",
+    "network",
+    "brain",
+    "neurons",
+    "artifical",
+    "AI"
+  ],
+  "author": "pvzzombs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pvzzombs/nneurals.js/issues"
+  },
+  "homepage": "https://github.com/pvzzombs/nneurals.js#readme"
+}
